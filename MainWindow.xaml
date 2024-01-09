@@ -19,7 +19,7 @@
 
     <Border BorderBrush="#FF0EA73B" BorderThickness="20" >
         <Grid x:Name="MainControl">
-            <Label Content="Press 1 to capture, 2 to clear." Foreground="#FF0090FF" FontSize="20" FontWeight="Bold" />
+            <Label Content="Press 1 to capture, 2 to clear, +/- to change opacity." Foreground="#FF0090FF" FontSize="20" FontWeight="Bold" />
             <Image Grid.Row="0" x:Name="ImageControl" Grid.RowSpan="1" />
         </Grid>
     </Border>

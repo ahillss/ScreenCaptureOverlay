@@ -22,7 +22,7 @@ namespace Project1
     public partial class MainWindow : Window
     {
         private LowLevelKeyboardListener listener;
-        private const float transparent_opacity = 0.5f;
+        private float transparent_opacity = 0.5f;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -59,6 +59,20 @@ namespace Project1
             {
                 ImageControl.Source = null;
             }
+            else if (e.KeyPressed == Key.Add || e.KeyPressed == Key.OemPlus)
+            {
+                if (transparent_opacity < 1.0f) {
+                    transparent_opacity += 0.1f;
+                    Opacity = transparent_opacity;
+                }
+            }
+            else if (e.KeyPressed == Key.Subtract || e.KeyPressed == Key.OemMinus)
+            {
+                if (transparent_opacity > 0.0f) {
+                    transparent_opacity -= 0.1f;
+                    Opacity = transparent_opacity;
+                }
+            }
         }
 
         private void Window_Deactivated(object sender, EventArgs e)
@@ -70,6 +84,7 @@ namespace Project1
         {
             listener.UnHookKeyboard();
         }
+
         public MainWindow()
         {
             InitializeComponent();
